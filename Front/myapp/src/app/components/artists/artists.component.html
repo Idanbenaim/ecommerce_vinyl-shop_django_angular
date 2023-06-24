@@ -1,11 +1,27 @@
 <!-- Alphabetical menu -->
-<div class="alphabet-bar">
+<!-- <div class="alphabet-bar">
   <button *ngFor="let letter of uniqueLetters" (click)="navigateToLetter(letter)">
     {{ letter }}
   </button>
-</div>
+</div> -->
+<mat-toolbar class="alphabet-bar">
+  <span *ngFor="let letter of uniqueLetters" (click)="navigateToLetter(letter)" class="letter-button">
+    {{ letter }}
+  </span>
+</mat-toolbar>
 
 <!-- List of artists -->
+<h3 class="title">Select the artist name:</h3>
+<ng-container *ngFor="let letter of uniqueLetters">
+  <h2 id="letter-{{ letter }}" class="letter-title">{{ letter }}</h2>
+  <div class="artists-grid">
+    <div class="artist-item" *ngFor="let artist of getArtistsByLetter(letter) | async">
+      {{ artist.artist_name }}<br><br>
+    </div>
+  </div>
+</ng-container>
+
+<!-- <h3>Select the artist name:</h3>
 <ng-container *ngFor="let letter of uniqueLetters">
 <h2 id="letter-{{ letter }}">{{ letter }}</h2>
   <mat-list>
@@ -13,4 +29,4 @@
       <span mat-line>{{ artist.artist_name }}</span>
     </mat-list-item>
   </mat-list>
-</ng-container>
+</ng-container> -->

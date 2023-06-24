@@ -1,44 +1,74 @@
+ /* ######### Alphabetical menu ############ */
+.alphabet-bar {
+  justify-content: space-around;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
 
-.artist-card {
-  max-width: 400px;
+.letter-button {
+  cursor: pointer; /* Change the cursor to a hand when hovering */
+  padding: 5px;
+  font-size: 18px;
+}
+
+.letter-button:hover {
+  background-color: #673AB7;
+  color: white;
+}
+
+ /* ######### artists list ############ */
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #673AB7; /* Or any color you want */
+}
+
+.letter-title {
+  font-size: 22px;
+  color: #3F51B5; /* Or any color you want */
+}
+
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Define the grid layout */
+  grid-gap: 20px; /* Gap between grid items */
+}
+
+.artist-item {
+  font-size: 16px;
+  color: #080808; /* Amber */
+}
+
+@media (max-width: 768px) {
+  .artists-grid {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
+}
+
+
+
+/* ###################### */
+/* .title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #673AB7;
+}
+
+.letter-title {
+  font-size: 22px;
+  color: #3F51B5;
+}
+
+.artists-grid {
   display: flex;
-  flex-direction: column; /* sets the direction of flex items in a flex container */
-}
-
-.artist-card mat-card-content {
-  flex-grow: 1; /* allows the content area to take up any remaining space in the flex container*/
-  min-height: 6em;
-  line-height: 1.5em; /* Adjust this value according to your needs */
-  text-overflow: ellipsis; /* used to indicate that text is cut off and ends with '...' */
-  overflow: hidden; /* hides the overflowing text */
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* limits the number of lines shown */
-  -webkit-box-orient: vertical; /* sets the orientation of the flex items */
-}
-
-.mat-card-content {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-.item {
-  flex: 1 1 calc(33.33% - 16px);
-  margin: 8px;
-  display: flex;
-  justify-content: stretch; /* makes items fill up the remaining space */
-}
-
-.artist-header-image {
-  background-size: cover;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
   flex-wrap: wrap;
-
+  justify-content: space-around;
 }
+
+.artist-item {
+  flex: 1 0 10%;
+  margin: 10px;
+  font-size: 16px;
+  color: #080808;
+} */
 
