@@ -1,0 +1,16 @@
+<!-- Alphabetical menu -->
+<div class="alphabet-bar">
+  <button *ngFor="let letter of uniqueLetters" (click)="navigateToLetter(letter)">
+    {{ letter }}
+  </button>
+</div>
+
+<!-- List of artists -->
+<ng-container *ngFor="let letter of uniqueLetters">
+<h2 id="letter-{{ letter }}">{{ letter }}</h2>
+  <mat-list>
+    <mat-list-item *ngFor="let artist of getArtistsByLetter(letter) | async">
+      <span mat-line>{{ artist.artist_name }}</span>
+    </mat-list-item>
+  </mat-list>
+</ng-container>
