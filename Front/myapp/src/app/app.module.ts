@@ -19,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { ArtistCardComponent } from './components/artist-card/artist-card.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     NavigationComponent,
     AlbumsComponent,
     ArtistsComponent,
+    ArtistCardComponent,
     // MatdesComponent,
   ],
   imports: [

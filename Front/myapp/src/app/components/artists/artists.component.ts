@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ArtistsService } from 'src/app/services/artists.service';
+import { MatCardModule } from '@angular/material/card';
+
 
 
 @Component({

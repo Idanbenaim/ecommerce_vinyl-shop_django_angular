@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 
 class Artist(models.Model):
     artist_name = models.CharField(max_length=250)
+    artist_bio = models.CharField(max_length=1000, blank=True, null=True)
+    artist_image = models.ImageField(upload_to='static/images', blank=True, null=True)
 
     def __str__(self):
         return self.artist_name

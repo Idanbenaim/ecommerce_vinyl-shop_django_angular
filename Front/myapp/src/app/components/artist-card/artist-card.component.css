@@ -1,0 +1,55 @@
+.artist-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column; /* sets the direction of flex items in a flex container */
+  background-color: #bd92c5; /* light purple background */
+  transition: background-color 0.3s ease; /* transition for hover effect */
+}
+
+.artist-card:hover {
+  background-color: #FFC107; /* Amber hover effect */
+}
+
+.artist-card mat-card-content {
+  flex-grow: 1; /* allows the content area to take up any remaining space in the flex container*/
+  min-height: 3em;
+  line-height: 1.5em; /* Adjust this value according to your needs */
+  text-overflow: ellipsis; /* used to indicate that text is cut off and ends with '...' */
+  overflow: hidden; /* hides the overflowing text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* limits the number of lines shown */
+  -webkit-box-orient: vertical; /* sets the orientation of the flex items */
+}
+
+/* .mat-card-content {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: horizontal;
+} */
+
+.item {
+  flex: 1 1 calc(33.33% - 16px);
+  margin: 8px;
+  display: flex;
+  justify-content: stretch; /* makes items fill up the remaining space */
+}
+
+.artist-header-image {
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+
+}
+
+/* @media (max-width: 768px) {
+  .item {
+    flex: 1 1 100%;
+  }
+} */

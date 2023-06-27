@@ -1,9 +1,5 @@
 <!-- Alphabetical menu -->
-<!-- <div class="alphabet-bar">
-  <button *ngFor="let letter of uniqueLetters" (click)="navigateToLetter(letter)">
-    {{ letter }}
-  </button>
-</div> -->
+
 <mat-toolbar class="alphabet-bar">
   <span *ngFor="let letter of uniqueLetters" (click)="navigateToLetter(letter)" class="letter-button">
     {{ letter }}
@@ -11,22 +7,33 @@
 </mat-toolbar>
 
 <!-- List of artists -->
-<h3 class="title">Select the artist name:</h3>
+<h3 class="title">Select the artist:</h3>
 <ng-container *ngFor="let letter of uniqueLetters">
   <h2 id="letter-{{ letter }}" class="letter-title">{{ letter }}</h2>
-  <div class="artists-grid">
-    <div class="artist-item" *ngFor="let artist of getArtistsByLetter(letter) | async">
-      {{ artist.artist_name }}<br><br>
+  <div class="container">
+    <div class="item" *ngFor="let artist of getArtistsByLetter(letter) | async">
+      <mat-card class="artist-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{ artist.artist_name }}</mat-card-title>
+            <mat-card-subtitle>Medium</mat-card-subtitle>
+            <img mat-card-md-image src="http://localhost:8000{{ artist.artist_image }}" alt="Artist Image">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          {{ artist.artist_bio }}
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </ng-container>
 
-<!-- <h3>Select the artist name:</h3>
+<!-- <h3 class="title">Select the artist name:</h3>
 <ng-container *ngFor="let letter of uniqueLetters">
-<h2 id="letter-{{ letter }}">{{ letter }}</h2>
-  <mat-list>
-    <mat-list-item *ngFor="let artist of getArtistsByLetter(letter) | async">
-      <span mat-line>{{ artist.artist_name }}</span>
-    </mat-list-item>
-  </mat-list>
+  <h2 id="letter-{{ letter }}" class="letter-title">{{ letter }}</h2>
+  <div class="artists-grid">
+    <app-artist-card *ngFor="let artist of getArtistsByLetter(letter) | async" [artist]="artist"></app-artist-card>
+
+  </div>
 </ng-container> -->
+
